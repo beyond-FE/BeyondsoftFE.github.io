@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BeyondSoft FE</title>
+  <link rel="stylesheet" href="http://coffeedeveloper.github.io/typing.js/stylesheets/typing.css">
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="http://coffeedeveloper.github.io/typing.js/javascripts/typing.js" charset="utf-8"></script>
+  <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" charset="utf-8"></script>
+  <script src="http://at.alicdn.com/t/font_bqakanz6o54mfgvi.js" charset="utf-8"></script>
+  <style media="screen">
+  .icon {
+       width: 1em; height: 1em;
+       vertical-align: -0.15em;
+       fill: currentColor;
+       overflow: hidden;
+    }
+  body{
+    margin: 0;
+    padding: 0;
+  }
+  #source{
+    display: none;
+  }
+  .wrap{
+    position: fixed;
+    padding:18% 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 10;
+    text-align: center;
+    transition: transform 1s ease;
+  }
+  .wrap .content{
+    position: relative;
+    display: inline-block;
+    width: 500px;
+    z-index: 2;
+    text-align: left;
+  }
+  #particles-js{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+  .icon-col{
+    position: fixed;
+    width: 100%;
+    padding: 10px 0;
+    bottom: 0px;
+    z-index: 11;
+    text-align: center;
+  }
+  .icon-col .icon{
+    font-size: 2rem;
+    cursor: pointer;
+    animation: icon-shake 3s infinite ease backwards;
+    animation-delay: 2s;
+  }
+  @keyframes icon-shake{
+    0%{
+      transform:translateY(-20px);
+      opacity: 0
+    }
+    50%{
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100%{
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+  }
+
+  .list{
+    position: relative;
+    margin: 30px;
+    padding: 0;
+    z-index: 0;
+  }
+  .list li{
+    padding: 20px 0;
+    list-style-type: none;
+    line-height: .5;
+  }
+  .list li a::after{
+    content:"";
+    display:inline-block;
+    width: 0;
+    height: 5px;
+    font-size: 0;
+    background-color: #666;
+    transition: width .5s ease;
+  }
+  .list li a:hover::after{
+    width: 100%;
+  }
+  .list li a{
+    color: #666;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 48px;
+    height: 60px;
+  }
+  .list li:nth-child(2){
+    padding-left: 70px;
+  }
+  .list li:nth-child(3){
+    padding-left: 250px;
+  }
+  </style>
+</head>
+<body>
+  <div id="source">
+    empty your minds,<br/>
+    be formless, shapeless, like water.<br/>
+    you put it into a cup, it becomes the cup.<br/>
+    you put it into a bottle, it becomes the bottle.<br/>
+    you put it into a teapot, it becomes the teapot.<br/>
+    water can flow, or it can crash.<br/>
+    Be water, my friends.<br/>
+  </div>
+  <div class="wrap">
+    <div id="particles-js"></div>
+    <div id="output-wrap" class="content">
+      <span id="output"></span>
+      <span class="typing-cursor">|</span>
+    </div>
+  </div>
+  <div class="icon-col">
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-jiantouxia"></use>
+    </svg>
+  </div>
+  <ul class="list">
+    <li><a href="javascript:;">BLOG</a></li>
+    <li><a href="bms-spa/index.html">REPOSITORY</a></li>
+    <li><a href="javascript:;">TO DO</a></li>
+  </ul>
+
+  <script>
+  var typing = new Typing({
+    source: document.getElementById('source'),
+    output: document.getElementById('output'),
+    delay: 60
+  });
+  typing.start();
+
+  //粒子系统
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 100,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#aaaaaa"
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+        "polygon": {
+          "nb_sides": 6
+        },
+        "image": {
+          "src": "img/github.svg",
+          "width": 100,
+          "height": 100
+        }
+      },
+      "opacity": {
+        "value": 0.4,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 3,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 40,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#aaaaaa",
+        "opacity": 0.3,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 2,
+        "direction": "none",
+        "random": true,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": false,
+          "mode": "grab"
+        },
+        "onclick": {
+          "enable": false,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 140,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 200,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true
+  });
+
+  $(".icon-col .icon").click(function(){
+    $('.wrap').fadeOut(500);
+    $(this).fadeOut(500);
+  })
+  </script>
+</body>
+</html>
